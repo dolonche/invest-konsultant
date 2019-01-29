@@ -1,0 +1,36 @@
+.page-footer {
+  &__wrapper {
+    background-color: $blue;
+  }
+  @extend %container;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  display: flex;
+  &__social {
+    display: flex;
+    &-item {
+      margin-right: 30px;
+      img {
+        width: 30px;
+        height: auto;
+      }
+    }
+  }
+  &__mail {
+    text-decoration: none;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: lighter;
+    margin-left: auto;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #fff;
+    transition: 0.4s all;
+    &:hover{
+      border-bottom: 1px solid transparent;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.video {
+  &__wrapper {
+    background-color: $grey-t;
+  }
+  @extend %container;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  display: flex;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  color: #fff;
+  &__descr, &__content{
+    width: 50%;
+  }
+  &__content{
+    iframe{
+      width: 100%;
+    }
+  }
+  &__descr {
+    padding-right: 40px;
+    box-sizing: border-box;
+    &-text{
+      margin-top: 35px; 
+      p{
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+}

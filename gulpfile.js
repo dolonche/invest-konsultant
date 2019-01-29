@@ -75,8 +75,8 @@ gulp.task('image:build', function () {
       imageminJpegRecompress({
         loops: 4,
         min: 50,
-        max: 95,
-        quality: 'high'
+        max: 80,
+        quality: 'medium'
       }),
       imagemin.optipng(),
       imagemin.svgo()
@@ -92,9 +92,9 @@ gulp.task('imagescontent:build', function () {
       imagemin.gifsicle(),
       imageminJpegRecompress({
         loops: 4,
-        min: 70,
+        min: 50,
         max: 80,
-        quality: 'high'
+        quality: 'medium'
       }),
       imagemin.optipng(),
       imagemin.svgo()
