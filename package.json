@@ -12,7 +12,7 @@
 		"gulp": "gulp"
 	},
 	"devDependencies": {
-		"gulp": "latest",
+		"gulp": "^3.9.1",
 		"gulp-autoprefixer": "latest",
 		"gulp-connect": "^5.2.0",
 		"gulp-imagemin": "latest",
