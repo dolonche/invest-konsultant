@@ -5,7 +5,8 @@
 	"author": "Ivan Ivanov",
 	"license": "MIT",
 	"dependencies": {
-		"imagemin-jpeg-recompress": "^5.1.0"
+		"imagemin-jpeg-recompress": "^5.1.0",
+		"npm": "^6.7.0"
 	},
 	"scripts": {
 		"gulp": "gulp"
