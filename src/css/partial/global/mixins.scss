@@ -24,10 +24,11 @@ $text-color: #000000;
 %container {
   width: 1200px;
   margin: 0 auto;
-  @media #{$tablet-widths} {
-    width: 768px;
-  }
-  @media #{$mobile-widths} {
-    width: 320px;
-  }
+  min-width: 1200px;
+//  @media #{$tablet-widths} {
+//    width: 768px;
+//  }
+//  @media #{$mobile-widths} {
+//    width: 320px;
+//  }
 }

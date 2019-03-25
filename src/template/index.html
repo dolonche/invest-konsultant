@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -44,6 +43,36 @@
     </section>
   </div>
   //= include/footer.html
+  <div class="overlay"></div>
+  <div class="popup-news">
+    <div class="popup-news__close"></div>
+    <p class="popup-news__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nulla sit, dignissimos, placeat maxime aperiam! Tenetur et quidem quasi officiis, earum laborum, quos expedita optio, corporis excepturi quia. Fugiat, dolorem.</p>
+  </div>
+  <script>
+    'use strict';
+    var newsList = document.querySelector('.page-header__screen-content-news-list');
+    var overlay = document.querySelector('.overlay');
+    var popupNews = document.querySelector('.popup-news');
+    newsList.addEventListener('click', function(e) {
+      if (e.target.classList.contains('page-header__screen-content-news-list-item')) {
+        overlay.classList.add('overlay--max');
+        popupNews.classList.add('popup-news--open');
+        popupNews.querySelector('.popup-news__descr').innerHTML = e.target.querySelector('.page-header__screen-content-news-list-item-hidden').innerHTML;
+      }
+    })
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode === 27 && popupNews.classList.contains('popup-news--open')) {
+        overlay.classList.remove('overlay--max');
+        popupNews.classList.remove('popup-news--open');
+      }
+    })
+    document.addEventListener('click', function(e) {
+      if ((e.target.classList.contains('overlay--max') || (e.target.classList.contains('popup-news__close'))) && popupNews.classList.contains('popup-news--open')) {
+        overlay.classList.remove('overlay--max');
+        popupNews.classList.remove('popup-news--open');
+      }
+    })
+  </script>
 </body>
 
 </html>

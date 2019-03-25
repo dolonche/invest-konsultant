@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -29,10 +28,23 @@
       <div class="page-header__screen">
         <div class="page-header__screen-content">
           <div class="page-header__screen-content-img">
-            <img src="img/screen-kogan.jpg" alt="" class="page-header__screen-content-img-content"></div>
-          <h1 class="page-header__screen-content-title">
-            <span>О финансах по-честному</span> <br> <span>Более чем 20-летний опыт на фондовых рынках</span>
-          </h1>
+            <img src="img/screen-kogan1.jpg" alt="" class="page-header__screen-content-img-content"></div>
+          <div class="page-header__screen-content-right">
+            <h1 class="page-header__screen-content-title">
+              <span>О финансах по-честному</span> <br> <span>Более чем 20-летний опыт на фондовых рынках</span>
+            </h1>
+            <div class="page-header__screen-content-news">
+              <div class="page-header__screen-content-news-title">Информация</div>
+              <div class="page-header__screen-content-news-list">
+                <div class="page-header__screen-content-news-list-item">
+                  <div class="page-header__screen-content-news-list-item-date">07.03.19</div>
+                  <p class="page-header__screen-content-news-list-item-descr">Включение Когана Евгений Борисовича в Национальную ассоциацию участников фондового рынка</p>
+                  <p class="page-header__screen-content-news-list-item-hidden">Информация о включении ИП Когана Евгений Борисовича в Национальную ассоциацию участников фондового рынка (НАУФОР) в качестве ассоциированного члена – дата раскрытия: 07.03.2019;. период актуальности – с 07.03.2019 по н.вр. <br>Информация о базовых стандартах НАУФОР по инвестиционному консультированию - <a href="http://www.naufor.ru/tree.asp?n=16122" target="_blank">naufor.ru</a> <br>
+                  <a href="" target="_blank" style="margin-top: 8px; display: inline-block">Свидетельство науфор</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -79,6 +91,36 @@
       <a href="mailto:info@bitkogan.expert" class="page-footer__mail">info@bitkogan.expert</a>
     </footer>
   </div>
+  <div class="overlay"></div>
+  <div class="popup-news">
+    <div class="popup-news__close"></div>
+    <p class="popup-news__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nulla sit, dignissimos, placeat maxime aperiam! Tenetur et quidem quasi officiis, earum laborum, quos expedita optio, corporis excepturi quia. Fugiat, dolorem.</p>
+  </div>
+  <script>
+    'use strict';
+    var newsList = document.querySelector('.page-header__screen-content-news-list');
+    var overlay = document.querySelector('.overlay');
+    var popupNews = document.querySelector('.popup-news');
+    newsList.addEventListener('click', function(e) {
+      if (e.target.classList.contains('page-header__screen-content-news-list-item')) {
+        overlay.classList.add('overlay--max');
+        popupNews.classList.add('popup-news--open');
+        popupNews.querySelector('.popup-news__descr').innerHTML = e.target.querySelector('.page-header__screen-content-news-list-item-hidden').innerHTML;
+      }
+    })
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode === 27 && popupNews.classList.contains('popup-news--open')) {
+        overlay.classList.remove('overlay--max');
+        popupNews.classList.remove('popup-news--open');
+      }
+    })
+    document.addEventListener('click', function(e) {
+      if ((e.target.classList.contains('overlay--max') || (e.target.classList.contains('popup-news__close'))) && popupNews.classList.contains('popup-news--open')) {
+        overlay.classList.remove('overlay--max');
+        popupNews.classList.remove('popup-news--open');
+      }
+    })
+  </script>
 </body>
 
 </html>
